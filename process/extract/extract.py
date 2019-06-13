@@ -1,21 +1,24 @@
 import pandas as pd
+from setting import PLAIN
+import json as js
 
-class extract:
+
+class UseSetting:
     path = ''
-    file_name: ''
+    file_name = ''
 
 
-    def csvv(self):
-        pass
+    def __init__(self, path, file_name):
+        self.path = path
+        self.file_name = file_name
+        print("""RUTA DE ACCESO:\t\t{ruta}
+NOMBRE ARCHIVO:\t\t{nombre}""".format(ruta=self.path, nombre=self.file_name))
 
-    def xlss(self):
-        pass
+    def __del__(self):
+        print("Espacio libre: UseSetting")
 
-    def txtt(self):
-        pass
+class Source(UseSetting):
+    def __del__(self):
+        print("Espacio libre: Source")
 
-    def jsonn(self):
-        pass
-
-    def htmll(self):
-        
+a = UseSetting(PLAIN['CSV']['ROOT'], PLAIN['CSV']['NAME'])
