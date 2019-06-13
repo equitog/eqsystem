@@ -28,7 +28,6 @@ class AccessDatabaseSqlServer:
 
         if cnx:
             print("Conexion Aperturada : ", cnx)
-
         return cnx
 
     def insert(self, io, schema, table_name, driver_string):
